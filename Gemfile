@@ -17,6 +17,7 @@ gem 'haml-rails'
 gem 'pg'
 gem 'sendgrid'
 gem 'simple_form', '3.1.0.rc1'
+gem 'inherited_resources'
 
 group :development do
   gem 'better_errors'
