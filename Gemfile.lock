@@ -167,6 +167,13 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
+    protector (0.7.6)
+      activesupport
+      i18n
+    protector-inherited_resources (0.0.1)
+      activesupport
+      inherited_resources
+      protector (>= 0.6.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -322,6 +329,8 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
+  protector
+  protector-inherited_resources
   pry-rails
   pry-rescue
   quiet_assets
