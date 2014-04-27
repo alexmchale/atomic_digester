@@ -1,0 +1,15 @@
+.feed-story
+
+  %dl.dl-horizontal
+
+    %dt Title
+    %dd= story.title
+
+    %dt Summary
+    %dd= sanitize story.summary
+
+    %dt Object Inspect
+    %dd= story.inspect
+
+    %dt Object Methods
+    %dd= story.methods.sort.inspect

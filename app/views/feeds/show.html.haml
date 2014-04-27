@@ -1,12 +1,14 @@
 %p#notice= notice
 
+%h2 Details
 %dl.dl-horizontal
-
   %dt Name
   %dd= @feed.name
-
   %dt URL
   %dd= @feed.url
+
+%h2 Stories
+= render partial: "story", collection: @feed.stories
 
 = link_to 'Edit', edit_feed_path(@feed)
 \|

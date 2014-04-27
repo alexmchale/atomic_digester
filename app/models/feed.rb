@@ -15,4 +15,8 @@ class Feed < ActiveRecord::Base
     can :destroy
   end
 
+  def stories
+    Feedjira::Feed.fetch_and_parse(url).entries
+  end
+
 end
