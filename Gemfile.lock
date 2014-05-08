@@ -38,6 +38,7 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    cancancan (1.7.1)
     capistrano (3.0.1)
       i18n
       rake (>= 10.0.0)
@@ -174,13 +175,6 @@ GEM
     orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
-    protector (0.7.6)
-      activesupport
-      i18n
-    protector-inherited_resources (0.0.1)
-      activesupport
-      inherited_resources
-      protector (>= 0.6.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -315,6 +309,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass
+  cancancan
   capistrano (~> 3.0.1)
   capistrano-bundler
   capistrano-rails (~> 1.1.0)
@@ -339,8 +334,6 @@ DEPENDENCIES
   jquery-rails
   launchy
   pg
-  protector
-  protector-inherited_resources
   pry-rails
   pry-rescue
   quiet_assets

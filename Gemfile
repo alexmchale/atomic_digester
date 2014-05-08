@@ -18,8 +18,7 @@ gem 'pg'
 gem 'sendgrid'
 gem 'simple_form', '3.1.0.rc1'
 gem 'inherited_resources'
-gem 'protector'
-gem 'protector-inherited_resources'
+gem 'cancancan'
 gem 'feedjira'
 
 group :development do

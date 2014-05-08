@@ -7,13 +7,4 @@ class User < ActiveRecord::Base
 
   has_many :feeds
 
-  protect do |user|
-    scope { where(id: user.id) }
-
-    can :create
-    can :read
-    can :update
-    can :destroy
-  end
-
 end
