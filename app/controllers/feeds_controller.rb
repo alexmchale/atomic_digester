@@ -1,4 +1,4 @@
-class FeedsController < InheritedResources::Base
+class FeedsController < InheritedResourceController
 
   belongs_to :user, optional: true
 
