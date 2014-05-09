@@ -1,15 +1,18 @@
-.feed-story
+.well.feed-story
 
   %dl.dl-horizontal
 
     %dt Title
-    %dd= story.title
+    %dd= link_to story.title, story.url
+
+    %dt Author
+    %dd= story.author
+
+    %dt Published
+    %dd= story.published
 
     %dt Summary
     %dd= sanitize story.summary
 
-    %dt Object Inspect
-    %dd= story.inspect
-
-    %dt Object Methods
-    %dd= story.methods.sort.inspect
+    %dt Content
+    %dd= sanitize story.content
