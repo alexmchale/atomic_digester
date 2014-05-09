@@ -20,6 +20,7 @@ gem 'simple_form', '3.1.0.rc1'
 gem 'inherited_resources'
 gem 'cancancan'
 gem 'feedjira'
+gem 'draper'
 
 group :development do
   gem 'better_errors'
