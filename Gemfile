@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
+ruby '2.1.2'
 
 gem 'rails', '4.1.0'
 gem 'sass-rails', '~> 4.0.3'
@@ -32,6 +32,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.0'
   gem 'capistrano-rails-console'
   gem 'capistrano-rvm', '~> 0.1.1'
+  gem 'capistrano-rbenv'
   gem 'foreman'
   gem 'guard-bundler'
   gem 'guard-rails'
