@@ -21,6 +21,8 @@ gem 'inherited_resources'
 gem 'cancancan'
 gem 'feedjira'
 gem 'draper'
+gem 'redis'
+gem 'redis-namespace'
 
 group :development do
   gem 'better_errors'
