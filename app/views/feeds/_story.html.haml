@@ -5,14 +5,16 @@
     %dt Title
     %dd= link_to story.title, story.url
 
-    %dt Author
-    %dd= story.author
+    - if story.author.present?
+      %dt Author
+      %dd= story.author
 
     %dt Published
     %dd= story.published
 
-    %dt Summary
-    %dd= sanitize story.summary
+    - if story.summary.present?
+      %dt Summary
+      %dd= sanitize story.summary
 
     %dt Content
     %dd= sanitize story.content
