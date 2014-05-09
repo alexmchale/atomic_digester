@@ -2,16 +2,14 @@ require "spec_helper"
 
 describe FeedsController do
 
-  before(:each) { sign_in build(:user) }
+  before(:each) { sign_in create(:user) }
 
   context "#create" do
 
     it "creates a new feed with valid parameters" do
-      expect_any_instance_of(Feed).to receive(:create)
-
       post :create, feed: {
         :name => "Example Feed",
-        :url  => "http://example.com/feed.rss",
+        :url  => "http://www.marco.org/rss",
       }
 
       expect(assigns[:feed]).to be_valid
