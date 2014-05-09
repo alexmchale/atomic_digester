@@ -12,4 +12,16 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def decorated(objects, decorator_class = nil, &block)
+    Array(objects).map do |object|
+      if decorator_class == nil
+        class_name = if object.respond_to?(:model_name) then object.model_name else object.class.name end
+        decorator_name = "#{class_name}Decorator"
+        decorator_name.constantize.new(object)
+      else
+        decorator_class.new(object)
+      end
+    end
+  end
+
 end
