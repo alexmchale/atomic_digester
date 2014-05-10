@@ -10,7 +10,7 @@ set :branch, 'master'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, %w( config/database.yml config/secrets.yml log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system )
+set :shared_paths, %w( config/database.yml config/secrets.yml log tmp/pids tmp/cache tmp/sockets public/system )
 
 # Optional settings:
 set :user, 'alexmchale'
@@ -48,9 +48,6 @@ task :setup => :environment do
 
   queue! %[mkdir -p "#{deploy_to}/shared/tmp/sockets"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/tmp/sockets"]
-
-  queue! %[mkdir -p "#{deploy_to}/shared/vendor/bundle"]
-  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/vendor/bundle"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/public/system"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/public/system"]
