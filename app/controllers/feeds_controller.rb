@@ -5,6 +5,8 @@ class FeedsController < InheritedResourceController
   load_and_authorize_resource :user
   load_and_authorize_resource :feed
 
+  before_filter -> { raise 'whops!' }
+
   protected
 
   def permitted_params
