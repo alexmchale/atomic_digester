@@ -10,6 +10,7 @@ source /etc/profile.d/rbenv.sh
 PUMA_CONFIG_FILE=config/puma.rb
 PUMA_PID_FILE=tmp/pids/puma.pid
 PUMA_SOCKET=tmp/sockets/puma.sock
+PUMA_APP_DIR=/webapps/digester.io/current
 
 # check if puma process is running
 puma_is_running() {
@@ -35,9 +36,9 @@ case "$1" in
     echo "Starting puma..."
     rm -f $PUMA_SOCKET
     if [ -e $PUMA_CONFIG_FILE ] ; then
-      bundle exec puma --config $PUMA_CONFIG_FILE
+      bundle exec puma --config $PUMA_CONFIG_FILE --dir $PUMA_APP_DIR
     else
-      bundle exec puma --daemon --bind unix://$PUMA_SOCKET --pidfile $PUMA_PID_FILE
+      bundle exec puma --daemon --bind unix://$PUMA_SOCKET --pidfile $PUMA_PID_FILE --dir $PUMA_APP_DIR
     fi
 
     echo "done"
