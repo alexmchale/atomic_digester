@@ -27,12 +27,6 @@ gem 'rollbar'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :mri_21, :rbx]
-  gem 'capistrano', '~> 3.0.1'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails', '~> 1.1.0'
-  gem 'capistrano-rails-console'
-  gem 'capistrano-rvm', '~> 0.1.1'
-  gem 'capistrano-rbenv'
   gem 'foreman'
   gem 'guard-bundler'
   gem 'guard-rails'
@@ -44,6 +38,7 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
+  gem 'mina'
 end
 
 group :development, :test do
