@@ -3,5 +3,12 @@ rvm:
   - 2.1.1
   - 2.0.0
   - 1.9.3
-  - jruby-19mode # JRuby in 1.9 mode
-before_install: gem install bundler
+  - jruby-19mode
+before_install:
+  - gem install bundler
+services:
+  - postgresql
+  - redis-server
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
