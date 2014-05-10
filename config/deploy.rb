@@ -69,8 +69,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      queue "RAILS_ENV=production bin/puma.sh stop"
-      queue "RAILS_ENV=production bin/puma.sh start"
+      queue "RAILS_ENV=production bin/puma.sh restart"
     end
   end
 end
