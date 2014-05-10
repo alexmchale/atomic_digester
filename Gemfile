@@ -22,6 +22,7 @@ gem 'draper'
 gem 'redis'
 gem 'redis-namespace'
 gem 'puma'
+gem 'rollbar'
 
 group :development do
   gem 'better_errors'
