@@ -5,6 +5,8 @@
 
 # The script will start with config set by $PUMA_CONFIG_FILE by default
 
+source /etc/profile.d/rbenv.sh
+
 PUMA_CONFIG_FILE=config/puma.rb
 PUMA_PID_FILE=tmp/pids/puma.pid
 PUMA_SOCKET=tmp/sockets/puma.sock
