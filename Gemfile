@@ -21,7 +21,7 @@ gem 'feedjira'
 gem 'draper'
 gem 'redis'
 gem 'redis-namespace'
-gem 'unicorn'
+gem 'puma'
 
 group :development do
   gem 'better_errors'
