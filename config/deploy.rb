@@ -31,7 +31,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # execute :touch, release_path.join('tmp/restart.txt')
       within release_path do
-        execute "cd #{release_path}; bin/puma.sh restart"
+        execute "cd #{release_path}; RAILS_ENV=production bin/puma.sh restart"
       end
     end
   end
