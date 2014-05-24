@@ -1,6 +1,8 @@
 AtomicDigester::Application.routes.draw do
 
-  root :to => "home#index"
+  get 'static_pages/index'
+
+  root :to => "static_pages#index"
 
   devise_for :users, :controllers => {:registrations => "registrations"}
 
