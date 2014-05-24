@@ -20,7 +20,7 @@
 //
 //= require_self
 //
-//= require ./ng_routes
+//= require ./routes
 //
 //= require_tree .
 //= require_tree ../templates
