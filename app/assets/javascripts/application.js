@@ -23,3 +23,4 @@
 //= require ./ng_routes
 //
 //= require_tree .
+//= require_tree ../templates

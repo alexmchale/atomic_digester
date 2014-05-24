@@ -34,5 +34,8 @@ module AtomicDigester
     config.i18n.enforce_available_locales = true
     I18n.enforce_available_locales = true
 
+    # Include the templates directory in the asset pipeline.
+    config.assets.paths += [ Rails.root.join("app", "assets", "templates") ]
+
   end
 end
