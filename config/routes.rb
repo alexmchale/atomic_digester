@@ -11,5 +11,6 @@ AtomicDigester::Application.routes.draw do
   end
 
   resources :feeds
+  resources :stories, only: %i( index )
 
 end

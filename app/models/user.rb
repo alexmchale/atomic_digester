@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 
   has_many :feeds
 
+  def stories
+    feeds.map(&:stories).flatten.sort_by(&:published)
+  end
+
 end

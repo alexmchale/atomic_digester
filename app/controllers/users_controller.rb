@@ -1,12 +1,7 @@
-class UsersController < ApplicationController
-  before_filter :authenticate_user!
+class UsersController < InheritedResourceController
 
-  def index
-    @users = User.all
-  end
+  respond_to :json
 
-  def show
-    @user = User.find(params[:id])
-  end
+  load_and_authorize_resource :user
 
 end

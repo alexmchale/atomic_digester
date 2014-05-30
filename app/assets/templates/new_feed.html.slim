@@ -1,0 +1,12 @@
+h1 = "Create a new feed"
+
+form role="form" ng-submit="submit()" ng-controller="NewFeedCtrl"
+
+  div.form-group
+
+    label for="url" = "URL"
+    input.form-control type="text" name="url" id="url" placeholder="Enter a URL to search for RSS feeds ..." ng-model="url"
+
+  div.buttons
+
+    button.btn.btn-primary type="submit" = "Find feeds"

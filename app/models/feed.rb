@@ -10,7 +10,7 @@ class Feed < ActiveRecord::Base
   def stories
     # First check Redis to see if we get a cache hit.
     xml = $redis.get(cache_key)
-    return Feedjira::Feed.parse(xml).entries if xml.present?
+    return wrap_entries(Feedjira::Feed.parse(xml).entries) if xml.present?
 
     # Then retrieve the XML from the server.
     xml = Feedjira::Feed.fetch_raw(url)
@@ -26,7 +26,7 @@ class Feed < ActiveRecord::Base
 
     # Cache the response and return it.
     $redis.setex(cache_key, cache_lifetime_seconds, xml)
-    parsed.entries
+    wrap_entries(parsed.entries)
   rescue Feedjira::NoParserAvailable
     # We got something in response that isn't parsable.
     $redis.setex(cache_key, cache_lifetime_seconds, YAML.dump(nil))
@@ -45,6 +45,10 @@ class Feed < ActiveRecord::Base
 
   def validate_feed_url
     errors[:url] << "doesn't seem to be a valid rss feed" unless stories
+  end
+
+  def wrap_entries(entries)
+    entries.map { |entry| Story.new self, entry }
   end
 
 end

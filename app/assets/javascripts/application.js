@@ -16,6 +16,7 @@
 //= require angular-animate
 //= require angular-resource
 //= require angular-route
+//= require angular-sanitize
 //= require angular-rails-templates
 //
 //= require_self

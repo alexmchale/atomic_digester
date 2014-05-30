@@ -1,0 +1,18 @@
+h1 Stories
+
+div.stories
+
+  div.story ng-repeat="story in stories"
+
+    div.story-inner
+
+      h3
+        a href="{{story.url}}" ng-bind-html="story.title"
+
+      div ng-if="story.author" ng-bind-html="story.author"
+
+      div ng-if="story.published" ng-bind-html="story.published"
+
+      div ng-if="story.summary && !story.content" ng-bind-html="story.summary"
+
+      div ng-if="story.content" ng-bind-html="story.content"
