@@ -18,10 +18,12 @@
 //= require angular-route
 //= require angular-sanitize
 //= require angular-rails-templates
+//= require ng-rails-csrf
 //
 //= require_self
 //
 //= require ./routes
 //
+//= require_tree ./resources
 //= require_tree .
 //= require_tree ../templates

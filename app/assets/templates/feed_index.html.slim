@@ -1,0 +1,19 @@
+h1 = "Feeds"
+
+table.table
+
+  thead
+    tr
+      th = "Name"
+      th = "URL"
+
+  tbody
+    tr ng-repeat="feed in feeds"
+      td ng-bind-html="feed.name"
+      td ng-bind-html="feed.url"
+      td
+        div.btn-group
+          a.btn.btn-success ng-href="#/feeds/{{feed.id}}/show"
+            span.glyphicon.glyphicon-search
+          a.btn.btn-warning ng-href="#/feeds/{{feed.id}}/edit"
+            span.glyphicon.glyphicon-pencil
