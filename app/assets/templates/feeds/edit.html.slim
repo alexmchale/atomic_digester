@@ -1,0 +1,20 @@
+div.container
+
+  h1 = "Edit Feed: {{feed.name}}"
+
+  form role="form"
+
+    div.form-group
+      label for="feed_name" = "Feed Name"
+      input.form-control type="text" ng-model="feed.name"
+
+    div[text-field field-name="url"]
+
+    div.form-group ng-class="{'has-error': errors.url, 'has-feedback': errors.url}"
+      label.control-label for="feed_name" = "URL"
+      input.form-control type="text" ng-model="feed.url"
+      span.glyphicon.glyphicon-remove.form-control-feedback ng-show="errors.url"
+      span.help-block ng-show="errors.url" ng-bind-html="errors.url"
+
+    div.form-group
+      button.btn.btn-primary ng-click="update(feed)" = "Update this feed"
